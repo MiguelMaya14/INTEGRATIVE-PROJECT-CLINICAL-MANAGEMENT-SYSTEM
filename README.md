@@ -41,7 +41,7 @@ As the **Web & Database Integration Developer**, my role centered on bridging th
 ---
 
 ##  Repository Structure
-
+```text
 ├── web-client/         # Web application source files (HTML, CSS, JS)
 ├── desktop-app/        # Java/NetBeans desktop application source files
 ├── database/           # SQL scripts, schemas, and relational models
