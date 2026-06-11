@@ -1,0 +1,337 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f4f4f4; 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #080808;
+    min-height: 100vh;
+}
+
+/*  ESTRUCTURA PRINCIPAL GRID LAYOUT */
+.parent {
+    display: grid;
+    /* 5 columnas: 1 para el menú, 4 para el contenido */
+    grid-template-columns: repeat(5, 1fr); 
+    /* 3 filas: Header, Contenido (flexible), Footer */
+    grid-template-rows: auto 1fr auto; 
+    gap: 0; 
+    min-height: 100vh;
+}
+
+/* MENÚ */
+.div_nav {
+    grid-row: 1 / 4;
+    grid-column: 1 / 2;
+    background: linear-gradient(to right, #e1e7e6, #99eed7); 
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000; 
+    display: flex; 
+    flex-direction: column;
+    position: sticky; 
+    top: 0;          
+    height: 100vh;    
+    overflow-y: auto; 
+}
+
+.nav {
+    width: 100%;
+}
+
+.nav_link {
+    color: #000000;
+    display: block;
+    padding: 15px 0;
+    text-decoration: none;
+}
+
+.nav_link--inside:hover {
+    background: #1d8364;
+}
+
+.nav_link--inside {
+    border-radius: 6px;
+    padding-left: 20px;
+    text-align: left;
+}
+
+.list {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 0 16px 16px 0;
+    background: linear-gradient(to right, #e1e7e6, #99eed7); 
+}
+
+.list_item {
+    list-style: none;
+    width: 100%;
+    text-align: center;
+    overflow: hidden;
+}
+
+.list_item--click {
+    cursor: pointer;
+}
+
+.list_button {
+    display: flex;
+    align-items: center; 
+    gap: 1em;
+    width: 70%;
+    margin: 0 auto;
+}
+
+.list_arrow {
+    margin-left: auto;
+    transition: transform .3s;
+}
+
+.list_show {
+    width: 80%;
+    margin-left: auto;
+    border-left: 2px solid #303440;
+    list-style: none;
+    height: 0;
+    overflow: hidden;
+    transition: height 0.8s ease;
+}
+
+.arrow .list_arrow {
+    transform: rotate(90deg);
+}
+
+
+/* HEADER */
+.div_header {
+    grid-column: 2 / -1;
+    grid-row: 1 / 2;
+}
+
+.hero {
+    
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    height: 100px;
+    padding: 0 5%; 
+    background: linear-gradient(to right, #1d8364, #5BC3A8); 
+}
+.hero h2 {
+    color: white;
+    font-size: 1.8em; 
+    margin: 0; 
+    font-weight: bold;
+}
+
+/* CONTENIDO RADIOGRAFIAS */
+.div_content_radiografias {
+    grid-column: 2 / -1;
+    grid-row: 2 / 3;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Hero section */
+
+.service-hero {
+    background-image: url('../assests_images/radiogra.jpg');
+    background-size: cover;      
+    background-position: center; 
+    background-repeat: no-repeat; 
+    padding: 80px 5%;
+    text-align: center;
+    border-bottom: 5px solid #2AB389;
+    position: relative;
+    /* Capa oscura para que se lea el texto sobre la imagen */
+    box-shadow: inset 0 0 0 1000px rgba(255, 255, 255, 0.411); 
+}
+
+.service-hero h1 {
+    color: #1A7352;
+    font-size: 2.8em;
+    margin-bottom: 15px;
+    font-weight: 800;
+}
+
+.service-hero p {
+    font-size: 1.25em;
+    color: #333;
+    max-width: 800px;
+    margin: 0 auto 30px auto;
+}
+
+.icon-xray {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 20px;
+}
+
+/* GRID INTERNO*/
+
+.features-grid {
+    padding: 50px 5%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    background-color: #F8F9FA;
+}
+
+.feature-card {
+    background-color: #ffffff;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-top: 5px solid #5BC3A8;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.feature-icon {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 15px;
+}
+
+.feature-card h3 {
+    color: #2AB389;
+    font-size: 1.3em;
+    margin-bottom: 10px;
+}
+
+.feature-card p {
+    color: #666666;
+    font-size: 0.95em;
+    line-height: 1.5;
+}
+
+/* CALL TO ACTION */
+.cta-section {
+    background: linear-gradient(135deg, #44d39f 0%, #50967b 100%);
+    color: #ffffff;
+    padding: 50px 5%;
+    text-align: center;
+}
+
+.cta-section h2 {
+    font-size: 2.2em;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.contact-info {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #ffffff;
+    color: #1A7352;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    margin-top: 20px;
+}
+
+.cta-button:hover {
+    background-color: #BFE7D5;
+    color: #2AB389;
+    transform: translateY(-2px);
+}
+
+/* FOOTER  */
+
+.div_footer {
+    grid-column: 2 / -1;
+    grid-row: 3 / 4;
+}
+
+.main-footer {
+    background-color: #1A7352; 
+    color: #ffffff;
+    padding: 30px 5%;
+    width: 100%;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-title {
+    color: #5BC3A8;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.footer-text, .footer-link, .university-link {
+    display: block;
+    color: #e0e0e0;
+    text-decoration: none;
+    margin-bottom: 8px;
+    font-size: 0.9em;
+    transition: color 0.3s;
+}
+
+.footer-link:hover, .university-link:hover {
+    color: white;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.social-icons img {
+    width: 24px;
+    height: 24px;
+}
+
+.university-link {
+    font-weight: bold;
+    margin-top: 10px;
+    color: #BFE7D5;
+}
+
+/*RESPONSIVE*/
+@media (max-width: 992px) {
+    .parent {
+        grid-template-columns: 1fr;
+    }
+
+    .div_nav {
+        display: none;
+    }
+
+    .div_header, .div_content_radiografias, .div_footer {
+        grid-column: 1 / -1;
+    }
+
+    .service-hero h1 {
+        font-size: 2em;
+    }
+}

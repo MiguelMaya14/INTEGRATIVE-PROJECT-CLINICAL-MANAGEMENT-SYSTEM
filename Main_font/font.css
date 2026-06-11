@@ -1,0 +1,7 @@
+/*Agregar font*/
+
+@font-face{
+    font-family: utr;
+    src: url(../Main_font/utr/CaesarDressing-Regular.ttf) format("truetype");
+    
+}

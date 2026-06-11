@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Login </title>
+    <link rel="stylesheet" href="../Main_styles/style_index.css">
+    <link rel="icon" href="../Main_icons/health_icon.png">
+    <link rel="stylesheet" href="../Main_font/font.css">
+   
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-header">
+            <div class="login-icon">
+                <i class="fas fa-lock"></i>
+            </div>
+            <h1> Login</h1>
+            <p>Access your account securely</p>
+        </div>
+        
+        <div class="alert alert-error" id="errorAlert">
+            <i class="fas fa-exclamation-circle"></i>
+            <span id="errorMessage">Invalid credentials. Please try again.</span>
+        </div>
+        
+        <div class="alert alert-success" id="successAlert">
+            <i class="fas fa-check-circle"></i>
+            <span>Login successful! Redirecting...</span>
+        </div>
+        
+        <form class="login-form" id="loginForm">
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <div class="input-with-icon">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" id="email" placeholder="Enter your email" required>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="password">Password</label>
+                <div class="input-with-icon">
+                    <i class="fas fa-key"></i>
+                    <input type="password" id="password" placeholder="Enter your password" required>
+                </div>
+            </div>
+            
+            <button type="submit" class="login-btn">
+                <i class="fas fa-sign-in-alt"></i>
+                Sign In
+            </button>
+            
+            <div class="login-links">
+                <a href="#"><i class="fas fa-question-circle"></i> Forgot Password?</a>
+                <a href="../Main_index/registro.html"><i class="fas fa-user-plus"></i> Create Account</a>
+            </div>
+        </form>
+    </div>
+    <script src="../Main_js/js_index.js"></script>
+
+   
+</body>
+</html>

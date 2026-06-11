@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointment History</title>
+    <link rel="stylesheet" href="../Main_styles/style_historial.css">
+    <link rel="icon" href="../Main_icons/health_icon.png">
+    <link rel="stylesheet" href="../Main_font/font.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+<div class="parent">
+
+    <div class="div_nav">
+        <nav class="nav">
+            <ul class="list">
+                <li class="list_item">
+                    <div class="list_button">
+                        <img src="../Main_icons/home.svg" class="list_img">
+                        <a href="../Main_index/principal.html" class="nav_link">HOME</a>
+                    </div>
+                </li>
+                <li class="list_item list_item--click">
+                    <div class="list_button list_button--click">
+                        <img src="../Main_icons/Servise.svg" class="list_img">
+                        <a href="#" class="nav_link">MY SERVICES</a>
+                        <img src="../Main_icons/Arrow.svg" class="list_arrow">
+                    </div>
+                    <ul class="list_show">
+                        <li class="list_inside"><a href="../Main_index/Nueva_cita.html" class="nav_link nav_link--inside">Schedule Appointment 1.1</a></li>
+                        <li class="list_inside"><a href="../Main_index/historial.html" class="nav_link nav_link--inside">History 1.2</a></li>
+                    </ul>
+                </li>
+                <li class="list_item list_item--click">
+                    <div class="list_button list_button--click">
+                        <img src="../Main_icons/contact.svg" class="list_img">
+                        <a href="#" class="nav_link">CONTACTS</a>
+                        <img src="../Main_icons/Arrow.svg" class="list_arrow">
+                    </div>
+                    <ul class="list_show">
+                        <li class="list_inside"><a href="../Main_index/doctores.html" class="nav_link nav_link--inside">Doctors 2.1</a></li>
+                    </ul>
+                </li>
+                <li class="list_item list_item--click">
+                    <div class="list_button list_button--click">
+                        <img src="../Main_icons/info.svg" class="list_img">
+                        <a href="#" class="nav_link">MORE INFORMATION</a>
+                        <img src="../Main_icons/Arrow.svg" class="list_arrow">
+                    </div>
+                    <ul class="list_show">
+                        <li class="list_inside"><a href="../Main_index/informacion.html" class="nav_link nav_link--inside">Clinic Info 3.1</a></li>
+                    </ul>
+                </li>
+                <li class="list_item list_item--click">
+                    <div class="list_button list_button--click">
+                        <img src="../Main_icons/medical_information.svg" class="list_img">
+                        <a href="#" class="nav_link">ABOUT</a>
+                        <img src="../Main_icons/Arrow.svg" class="list_arrow">
+                    </div>
+                    <ul class="list_show">
+                        <li class="list_inside"><a href="../Main_index/embarazo.html" class="nav_link nav_link--inside">Pregnancy Test 4.1</a></li>
+                        <li class="list_inside"><a href="../Main_index/radiografias.html" class="nav_link nav_link--inside">Radiography 4.2</a></li>
+                        <li class="list_inside"><a href="../Main_index/rehabilitacion.html" class="nav_link nav_link--inside">Rehabilitation 4.3</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <!--CLASS HEADER -->
+    <div class="div_header">
+      <header class="hero">
+        <h2>HEALTH PLUS</h2>
+        <div class="profile-info">
+                <img src="../Main_icons/user.svg" alt="user_icon" class="profile-avatar">
+                <span class="user-name"> </span>
+            </div>
+    </header>
+    </div>
+
+    <div class="div_content_historial">
+        <div class="main-content">
+            <aside class="sidebar-calendar">
+                <div class="calendar-section">
+                    <button class="new-appointment-btn">NEW APPOINTMENT</button>
+                </div>
+            </aside>
+
+            <section class="appointment-section">
+                <div class="filters-bar">
+                    <div class="dropdown-filter">
+                        <select id="doctorFilter" class="filter-select">
+                            <option value="">Todos los Doctores</option>
+                        </select>
+                    </div>
+                    <div class="dropdown-filter">
+                        <select id="specialtyFilter" class="filter-select">
+                            <option value="">Todas las Especialidades</option>
+                        </select>
+                    </div>
+                    <input type="text" id="searchInput" class="filter-search" placeholder="Buscar cita...">
+                    <button id="clearFiltersBtn" style="background: transparent; border: 1px solid #ccc; color: #555; padding: 5px 10px; border-radius: 20px; cursor: pointer; font-size: 12px; margin-left: 10px;">
+                        Limpiar ↺
+                    </button>
+                </div>
+
+                <div class="appointments-table-container">
+                    <table class="appointments-table">
+                        <thead>
+                            <tr>
+                                <th>Appointment ID</th>
+                                <th>Concept</th>
+                                <th>Specialty</th>
+                                <th>Doctor</th>
+                                <th>Date</th>
+                                <th>Time</th>
+                            </tr>
+                        </thead>
+                        <tbody id="appointmentsTableBody">
+                            </tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
+    </div>
+
+ <div class="div_footer">
+        <footer class="main-footer">
+            <div class="footer-container">
+                <div class="footer-section copyright-section">
+                    <h4 class="footer-title">Health Plus</h4>
+                    <p class="footer-text">© 2025 Health Plus. All rights reserved.</p>
+                    <p class="footer-text">License No. 123456</p>
+                </div>
+                <div class="footer-section links-section">
+                    <h4 class="footer-title">Quick Links</h4>
+                    <a href="https://protecciondatos-lopd.com/empresas/politica-de-privacidad-web/" class="footer-link" target="_blank">Privacy Policy</a>
+                    <a href="https://protecciondatos-lopd.com/empresas/terminos-y-condiciones-pagina-web/" class="footer-link" target="_blank">Terms of Service</a>
+                </div>
+                <div class="footer-section social-university-section">
+                    <h4 class="footer-title">Connect</h4>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/share/1DrHM8sj4V/" target="_blank"><img src="../Main_icons/facebook.png" alt="icon_facebook"></a>
+                        <a href="https://www.tiktok.com/@utr.ags?_r=1&_t=ZS-91osnajKf69" target="_blank"><img src="../Main_icons/tiktok.png" alt="icon_tiktok"></a>
+                        <a href="https://www.instagram.com/utr.ags?igsh=MW0zcHh0eWZubG5xZw==" target="_blank"><img src="../Main_icons/instagram.png" alt="icon_instagram"></a>
+                    </div>
+                    <a href="https://utr.edu.mx/" target="_blank" class="university-link">
+                        <img src="../Main_icons/school.svg" alt="school_icon"> Official University Site
+                    </a>
+                </div>
+            </div>
+        </footer> 
+    </div>
+
+</div>
+
+<script src="../Main_js/main_principal.js"></script> <script src="../Main_js/js_historial.js"></script>
+</body>
+</html>

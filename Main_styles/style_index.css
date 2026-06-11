@@ -1,0 +1,203 @@
+/* Variables CSS para mantener consistencia */
+:root {
+    --primary-color: #1A7352;   /* Verde oscuro de tu página */
+    --secondary-color: #2AB389; /* Verde principal */
+    --error-color: #e74c3c;
+    --warning-color: #f39c12;
+    --dark-color: #1A7352;
+    --light-color: #BFE7D5;     /* Verde claro del fondo */
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+/* Reset y estilos base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: 
+                linear-gradient(135deg, rgba(201, 224, 213, 0.8), rgba(165, 226, 206, 0.8)),
+                url('../assests_images/doctor_header.png');
+    background-size: cover;
+    background-position: center;
+    padding: 20px;
+}
+
+/* Contenedor principal del login */
+.login-container {
+    width: 100%;
+    max-width: 400px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    animation: fadeIn 0.8s ease-out;
+}
+
+/* Encabezado del login */
+.login-header {
+    background: var(--primary-color);
+    color: white;
+    padding: 25px 20px;
+    text-align: center;
+    position: relative;
+}
+
+.login-header h1 {
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+}
+
+.login-header p {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+.login-icon {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+/* Formulario de login */
+.login-form {
+    padding: 30px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--dark-color);
+}
+
+.input-with-icon {
+    position: relative;
+}
+
+.input-with-icon i {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--primary-color);
+}
+
+.input-with-icon input {
+    width: 100%;
+    padding: 12px 15px 12px 45px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+.input-with-icon input:focus {
+    border-color: var(--secondary-color);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(42, 179, 137, 0.2);
+}
+
+/* Botón de login */
+.login-btn {
+    width: 100%;
+    padding: 14px;
+    background: var(--secondary-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.login-btn:hover {
+    background: #1A7352;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Enlaces adicionales */
+.login-links {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    font-size: 0.9rem;
+}
+
+.login-links a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.login-links a:hover {
+    text-decoration: underline;
+}
+
+/* Alertas personalizadas */
+.alert {
+    padding: 12px 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    display: none;
+    align-items: center;
+    gap: 10px;
+    animation: slideIn 0.3s ease-out;
+}
+
+.alert-error {
+    background-color: rgba(231, 76, 60, 0.1);
+    border-left: 4px solid var(--error-color);
+    color: var(--error-color);
+}
+
+.alert-success {
+    background-color: rgba(42, 179, 137, 0.1);
+    border-left: 4px solid var(--secondary-color);
+    color: var(--secondary-color);
+}
+
+.alert i {
+    font-size: 1.2rem;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
